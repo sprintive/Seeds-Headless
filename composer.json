@@ -71,7 +71,7 @@
         "Support uploading files": "https://www.drupal.org/files/issues/2023-05-10/webform_rest-add_file_upload_resource-2899902-56-v4.x.patch"
       },
       "drupal/decoupled_router": {
-        "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2024-01-12/decoupled_router-3111456-resolve_lang-69.patch"
+        "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2023-08-30/decoupled_router-3111456-resolve_lang-66.patch"
       },
       "drupal/layoutbuilder_search_api": {
         "Issue #3334553: Custom blocks that are not created inside layout builder are not indexed": "https://www.drupal.org/files/issues/2024-05-20/indexing_custom_block-3334553-7.patch"
