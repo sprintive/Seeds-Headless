@@ -32,7 +32,7 @@
     "drupal/votingapi": "^3.0@beta",
     "drupal/disable_user_1_edit": "^1.6",
     "drupal/override_node_options": "^2.7",
-    "drupal/config_ignore": "^2.4",
+    "drupal/config_ignore": "^3.3",
     "drupal/webform_rest": "^4.0",
     "drupal/next": "^1.6",
     "drupal/jsonapi_views": "^1.0",
