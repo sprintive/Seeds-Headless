@@ -75,6 +75,10 @@
       },
       "drupal/layoutbuilder_search_api": {
         "Issue #3334553: Custom blocks that are not created inside layout builder are not indexed": "https://www.drupal.org/files/issues/2024-05-20/indexing_custom_block-3334553-7.patch"
+      },
+      "drupal/subrequests": {
+        "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch",
+        "PHP Fatal error: Uncaught Symfony LogicException: Cannot generate lazy proxy": "https://www.drupal.org/files/issues/2024-01-22/pagecache-final-class-3414134.patch"
       }
     },
     "patchLevel": {
