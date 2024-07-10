@@ -60,8 +60,13 @@ class RequestEventSubscriber implements EventSubscriberInterface {
           'tags' => $tags_to_invalidate,
           'secret' => $invalidate_secret,
         ],
-        'timeout' => 5,
+        'headers' => [
+          'drupal-api-secret' => $invalidate_secret,
+        ],
       ]);
+      if ($res->getStatusCode() === 200) {
+        \Drupal::messenger()->addMessage(t('Flushed cache on NextJS server.'));
+      }
     }
     catch (\Exception $e) {
       \Drupal::logger('seeds_headless_helper')->error($e->getMessage());
