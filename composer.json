@@ -42,7 +42,8 @@
     "drupal/jwt": "^1.1",
     "drupal/key": "^1.19",
     "drupal/consumer_image_styles": "^4.0",
-    "drupal/preview_link": "^2.1@alpha"
+    "drupal/preview_link": "^2.1@alpha",
+    "drupal/seeds_tailwind": "1.0.x-dev@dev"
   },
   "conflict": {
     "drupal/drupal": "*"
