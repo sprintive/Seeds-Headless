@@ -60,7 +60,8 @@
     "patches": {
       "drupal/core": {
         "Issue #3088239: Revisions on relations are not loaded correctly resulting in wrong data in includes": "https://www.drupal.org/files/issues/2024-01-08/3088239-44.patch",
-        "Issue #2073837: Validation errors on form elements without #access": "https://www.drupal.org/files/issues/2022-03-21/form-validation-errors-2073837-33.patch"
+        "Issue #2073837: Validation errors on form elements without #access": "https://www.drupal.org/files/issues/2022-03-21/form-validation-errors-2073837-33.patch",
+        "#3332416 CKEditor 5 toolbar items of multi-value field": "https://www.drupal.org/files/issues/2024-04-09/3332416-79.patch"
       },
       "drupal/facets": {
         "Facets Serializer Pagination": "https://www.drupal.org/files/issues/2019-04-30/facets-rest_pager-3008615-7.patch"
