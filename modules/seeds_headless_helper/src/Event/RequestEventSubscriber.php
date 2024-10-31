@@ -3,6 +3,7 @@
 namespace Drupal\seeds_headless_helper\Event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
@@ -40,10 +41,10 @@ class RequestEventSubscriber implements EventSubscriberInterface {
   /**
    * On terminate.
    *
-   * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\FinishRequestEvent $event
    *   The event to process.
    */
-  public function onFinish(RequestEvent $event) {
+  public function onFinish(FinishRequestEvent $event) {
     $tags_to_invalidate = drupal_static('seeds_nextjs_tags_to_invalidate', []);
     $allow_clearing = drupal_static('seeds_nextjs_allow_clearing', FALSE);
 
