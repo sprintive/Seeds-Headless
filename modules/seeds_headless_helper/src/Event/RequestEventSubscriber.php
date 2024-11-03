@@ -3,7 +3,6 @@
 namespace Drupal\seeds_headless_helper\Event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
@@ -40,11 +39,8 @@ class RequestEventSubscriber implements EventSubscriberInterface {
 
   /**
    * On terminate.
-   *
-   * @param \Symfony\Component\HttpKernel\Event\FinishRequestEvent $event
-   *   The event to process.
    */
-  public function onFinish(FinishRequestEvent $event) {
+  public function onFinish() {
     $tags_to_invalidate = drupal_static('seeds_nextjs_tags_to_invalidate', []);
     $allow_clearing = drupal_static('seeds_nextjs_allow_clearing', FALSE);
 
@@ -54,7 +50,7 @@ class RequestEventSubscriber implements EventSubscriberInterface {
     $invalidate_url = \Drupal::config('seeds_headless_helper.settings')->get('invalidate_url') ?? 'http://localhost:3000/api/invalidate';
     $invalidate_secret = \Drupal::config('seeds_headless_helper.settings')->get('api_secret') ?? 'secret';
     try {
-      \Drupal::httpClient()->post($invalidate_url, [
+      $res = \Drupal::httpClient()->post($invalidate_url, [
         'verify' => FALSE,
         'json' => [
           'tags' => $tags_to_invalidate,
@@ -64,7 +60,7 @@ class RequestEventSubscriber implements EventSubscriberInterface {
           'drupal-api-secret' => $invalidate_secret,
         ],
       ]);
-      if ($event->getResponse()->getStatusCode() === 200) {
+      if ($res->getStatusCode() === 200) {
         \Drupal::messenger()->addMessage(t('Flushed cache on NextJS server.'));
       }
     }
